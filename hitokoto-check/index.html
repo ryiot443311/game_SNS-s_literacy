@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ひとことチェック | SNSリテラシー診断ゲーム</title>
+  <meta name="description" content="SNSの下書きを「投稿」するか「削除」するか選んで、リテラシー力を試す10問のゲームです。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <section id="screen-start" class="screen">
+      <h1>ひとことチェック</h1>
+      <p class="lead">SNSリテラシー診断ゲーム</p>
+      <p>下書きが10個届きます。「投稿する」か「削除する」かを選んで、フォロワーを増やしましょう。</p>
+      <ul class="rules">
+        <li>投稿してよい内容を投稿：+50人</li>
+        <li>危ない内容を削除して炎上を回避：+20人</li>
+        <li>危ない内容を投稿して炎上：-80人</li>
+        <li>投稿してよい内容を削除：-10人</li>
+      </ul>
+      <button id="btn-start" class="btn primary">ゲームを始める</button>
+    </section>
+
+    <section id="screen-play" class="screen" hidden>
+      <div class="status">
+        <span id="progress">1 / 10</span>
+        <span>フォロワー <strong id="followers">100</strong></span>
+      </div>
+
+      <article class="post">
+        <div class="post-head">
+          <div class="avatar" aria-hidden="true">あ</div>
+          <div class="who">
+            <div class="name">あなた</div>
+            <div class="handle">@you ・ 下書き</div>
+          </div>
+        </div>
+        <p id="draft" class="draft"></p>
+      </article>
+
+      <div class="actions">
+        <button id="btn-post" class="btn">投稿する</button>
+        <button id="btn-delete" class="btn">削除する</button>
+      </div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <div class="center">
+        <button id="btn-next" class="btn primary" hidden>次へ</button>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen" hidden>
+      <h2 id="result-rank" class="rank"></h2>
+      <p id="result-score" class="score"></p>
+      <p id="result-followers" class="followers"></p>
+
+      <h3>分野ごとの結果</h3>
+      <ul id="result-breakdown" class="breakdown"></ul>
+
+      <h3 id="missed-title">まちがえた問題</h3>
+      <ul id="missed-list" class="missed"></ul>
+
+      <div class="actions">
+        <button id="btn-retry" class="btn primary">もう一度あそぶ</button>
+        <button id="btn-copy" class="btn">結果をコピー</button>
+      </div>
+      <p id="copy-status" class="copy-status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>このゲームは学習用のオリジナル作品で、特定のSNSや実在の人物・企業とは関係ありません。</p>
+  </footer>
+
+  <script src="questions.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
