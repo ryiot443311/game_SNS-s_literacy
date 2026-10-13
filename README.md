@@ -22,13 +22,6 @@ SNSの下書きを「投稿する」か「削除する」か選んで、リテ�
 
 `index.html` をブラウザで開くだけで動きます。
 
-## GitHub Pages で公開する
-
-1. このフォルダの中身を GitHub のリポジトリのルートに置いてプッシュします
-2. リポジトリの Settings → Pages を開きます
-3. Source を「Deploy from a branch」にして、ブランチ（`main`）とフォルダ（`/ (root)`）を選んで保存します
-4. 数分後に `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます
-
 ## 問題を追加する
 
 `questions.js` の `QUESTIONS` に、次の形で1つ足します。
